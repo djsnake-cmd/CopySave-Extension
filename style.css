@@ -1,3 +1,5 @@
+
+
 .container{
     justify-self: center;
     min-width: 175px;
@@ -5,7 +7,7 @@
     height: auto;
     margin: auto;
     padding: 4px;
-
+    background-color: #DDF0FF;
 }
 
 .card{
@@ -17,23 +19,31 @@
     padding: 10px;
 }
 .textArea{
+    font-family: 'Courier New', Courier, monospace;
     width: 100%;
     max-width: 100%;
     min-width: 100%;
     height: auto;
     max-height: 300px;
     min-height: 20px;
+    sc
 }
 .btn-container{
-    width: 100%;
+    width: 105%;
     padding-top: 4px;
     display: flex;
     justify-content: space-between;
 }
 
 .btn{
-    width: 30%;
+    font: verdana;
+    font-size: 10px;
+    width: 33%;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.btn :hover{
+    size: 110%;
 }

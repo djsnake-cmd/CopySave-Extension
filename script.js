@@ -6,9 +6,9 @@ function createCards(index){
         <div id="area-${index}-div" class="card">
             <textarea name="" id="textarea-${index}" class="textArea"></textarea>
             <div class="btn-container">
-            <button id="btn-copy-${index}" class="btn">Copy</button>
-            <button id="btn-save-${index}" class="btn">Save</button>
-            <button id ="btn-delete-${index}" class="btn">Delete</button>
+            <button id="btn-copy-${index}" class="btn">COPY</button>
+            <button id="btn-save-${index}" class="btn">SAVE</button>
+            <button id ="btn-delete-${index}" class="btn">DELETE</button>
             </>
         </div>`;
     container.appendChild(div);
@@ -19,6 +19,9 @@ function createCards(index){
     
     document.getElementById(`btn-save-${index}`).addEventListener('click', function(){
         saveText(index);
+    })
+    document.getElementById(`btn-delete-${index}`).addEventListener('click',function(){
+        deleteText(index);
     })
 }
 
@@ -38,6 +41,12 @@ function saveText(index)
     var data = {};
     data[`savedText-${index}`] = text;
     chrome.storage.local.set(data, function () { });
+}
+
+//Jobbar här atm
+function deleteText(index)
+{
+    document.getElementById(`textarea-${index}`).value = "";
 }
 
 document.addEventListener('DOMContentLoaded', function () 
