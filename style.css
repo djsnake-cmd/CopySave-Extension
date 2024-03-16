@@ -26,7 +26,9 @@
     height: auto;
     max-height: 300px;
     min-height: 20px;
+    
 }
+
 .btn-container{
     width: 105%;
     padding-top: 4px;
