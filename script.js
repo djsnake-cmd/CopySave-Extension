@@ -3,11 +3,13 @@ function createCards(index){
     const div = document.createElement('div');
     div.className = "container";
     div.innerHTML=`
-        <div id="area-${index}-div">
-            <textarea name="" id="textarea-${index}" cols="3" rows="3"></textarea>
-            <button id="btn-copy-${index}">Copy</button>
-            <button id="btn-save-${index}">Save</button>
-            <button id ="btn-delete-${index}">Delete</button>
+        <div id="area-${index}-div" class="card">
+            <textarea name="" id="textarea-${index}" class="textArea"></textarea>
+            <div class="btn-container">
+            <button id="btn-copy-${index}" class="btn">Copy</button>
+            <button id="btn-save-${index}" class="btn">Save</button>
+            <button id ="btn-delete-${index}" class="btn">Delete</button>
+            </>
         </div>`;
     container.appendChild(div);
 
