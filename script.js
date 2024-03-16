@@ -37,16 +37,16 @@ function copyToClipboard(index)
 
 function saveText(index) 
 {
+    var key = `savedText-${index}`;
     var text = document.getElementById(`textarea-${index}`).value;
-    var data = {};
-    data[`savedText-${index}`] = text;
-    chrome.storage.local.set(data, function () { });
+    chrome.storage.local.set({[key]: text}, function () { });
 }
 
 //Jobbar här atm
-function deleteText(index)
-{
-    document.getElementById(`textarea-${index}`).value = "";
+function deleteText(index) {
+    var key = `savedText-${index}`;
+    chrome.storage.local.remove(key, function () {});
+    document.getElementById(`textarea-${index}`).value = '';
 }
 
 document.addEventListener('DOMContentLoaded', function () 
