@@ -26,7 +26,6 @@
     height: auto;
     max-height: 300px;
     min-height: 20px;
-    sc
 }
 .btn-container{
     width: 105%;
@@ -46,4 +45,8 @@
 
 .btn :hover{
     size: 110%;
+}
+
+::-webkit-scrollbar {
+    display: none;
 }
