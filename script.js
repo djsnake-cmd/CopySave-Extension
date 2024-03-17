@@ -42,7 +42,6 @@ function saveText(index)
     chrome.storage.local.set({[key]: text}, function () { });
 }
 
-//Jobbar här atm
 function deleteText(index) {
     var key = `savedText-${index}`;
     chrome.storage.local.remove(key, function () {});
