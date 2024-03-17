@@ -1,13 +1,31 @@
-
-
 .container{
+    display: flex;
+    justify-content: flex-end;
     justify-self: center;
     min-width: 175px;
-    width: auto;
-    height: auto;
-    margin: auto;
-    padding: 4px;
-    background-color: #DDF0FF;
+    width: 100%;
+    height: 100%;
+    background-color: #DDF0FF;    
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+body {
+    margin: 0;
+    overflow-y: hidden;
+    box-sizing: content-box;
+}
+
+
+body::-webkit-scrollbar {
+    width: 0 !important
+}
+textarea::-webkit-scrollbar {
+    width: 0 !important
+}
+
+textarea::-webkit-scrollbar-button:horizontal:decrement:hover {
+    display: none;
 }
 
 .card{
@@ -16,7 +34,8 @@
     display: flex;
     justify-content: space-between;
     flex-direction: column;
-    padding: 10px;
+    padding: 5px 2px;
+    box-sizing: content-box;
 }
 .textArea{
     font-family: 'Courier New', Courier, monospace;
@@ -25,30 +44,48 @@
     min-width: 100%;
     height: auto;
     max-height: 300px;
-    min-height: 20px;
-    
+    min-height: 45px;
+    overflow-wrap: normal;
+    overflow-y: hidden;
+    background-color: #fefcfe;
 }
 
 .btn-container{
     width: 105%;
     padding-top: 4px;
+    height: 15px;
     display: flex;
-    justify-content: space-between;
-}
-
-.btn{
-    font: verdana;
-    font-size: 10px;
-    width: 33%;
-    display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
 }
 
-.btn :hover{
-    size: 110%;
+svg {
+    font: verdana;
+    font-size: 10px;
 }
 
-::-webkit-scrollbar {
-    display: none;
+svg:hover{
+    cursor: pointer;
+}
+
+.copy-container-over-text {
+    width: min-content;
+    background-color: #fefcfe;
+    opacity: 90%;
+    position: relative;
+    left: 85.5%;
+    top: 9px;
+    padding: 3px 2.75px .8px 2.5px;
+    border: 0.5px solid rgba(12, 12, 12, 0.362);
+    border-radius: 8px 8px;
+    margin-bottom: -20px;
+}
+
+.copy-btn {
+    filter: invert(75%) sepia(38%) saturate(3296%) hue-rotate(187deg) brightness(110%) contrast(103%);
+}
+
+.save-btn {
+    color: #58b7ff;
+    padding: 0 5px;
 }
