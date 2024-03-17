@@ -4,7 +4,7 @@ function createCards(index){
     div.className = "container";
     div.innerHTML=`
         <div id="area-${index}-div" class="card">
-            <textarea name="" id="textarea-${index}" class="textArea"></textarea>
+            <textarea name="" id="textarea-${index}" class="textArea" WRAP="off"></textarea>
             <div class="btn-container">
             <button id="btn-copy-${index}" class="btn">COPY</button>
             <button id="btn-save-${index}" class="btn">SAVE</button>
@@ -39,7 +39,12 @@ function saveText(index)
 {
     var key = `savedText-${index}`;
     var text = document.getElementById(`textarea-${index}`).value;
-    chrome.storage.local.set({[key]: text}, function () { });
+    var data = {};
+    data[`savedText-${index}`] = text;
+    chrome.storage.local.set(data, function () { });
+
+    document.getElementById(`textarea-${index}`).readOnly = true;
+
 }
 
 //Jobbar här atm
